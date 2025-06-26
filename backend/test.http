@@ -1,0 +1,45 @@
+### Register a new user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Srivalli Gurram",
+  "email": "srivalli@example.com",
+  "password": "Test@123",
+  "role": "donor"
+}
+
+###
+
+### Login as user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "srivalli@example.com",
+  "password": "Test@123"
+}
+
+###
+
+### 🔐 Get current user profile (replace `YOUR_TOKEN` below after login)
+GET http://localhost:5000/api/auth/profile
+Authorization: Bearer YOUR_TOKEN
+
+###
+
+### 🔄 Update user profile (replace `YOUR_TOKEN`)
+PUT http://localhost:5000/api/auth/profile
+Authorization: Bearer YOUR_TOKEN
+Content-Type: application/json
+
+{
+  "name": "Srivalli Updated",
+  "password": "NewPassword@123"
+}
+
+###
+
+### 🛡️ Admin: Get all users (replace `YOUR_ADMIN_TOKEN`)
+GET http://localhost:5000/api/auth/users
+Authorization: Bearer YOUR_ADMIN_TOKEN
